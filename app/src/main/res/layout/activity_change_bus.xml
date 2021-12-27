@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".change_bus">
+    tools:context=".change_bus"
+    android:background="@drawable/bp">
 
     <EditText
         android:id="@+id/busid"
@@ -12,14 +13,18 @@
         android:layout_height="51dp"
         android:ems="10"
         android:hint="Bus ID"
+        android:drawablePadding="8dp"
+        android:drawableLeft="@drawable/ic_baseline_directions_bus_24"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <EditText
         android:id="@+id/busname"
@@ -27,44 +32,56 @@
         android:layout_height="51dp"
         android:ems="10"
         android:hint="Bus Name"
+        android:drawableLeft="@drawable/ic_baseline_fiber_manual_record_24"
+        android:drawablePadding="8dp"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279" />
+        app:layout_constraintVertical_bias="0.289" />
 
     <EditText
         android:id="@+id/from"
         android:layout_width="318dp"
         android:layout_height="51dp"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="From City"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintVertical_bias="0.414" />
 
     <EditText
         android:id="@+id/to"
         android:layout_width="318dp"
         android:layout_height="51dp"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="8dp"
         android:ems="10"
         android:hint="To City"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <EditText
         android:id="@+id/time"
@@ -72,13 +89,19 @@
         android:layout_height="51dp"
         android:ems="10"
         android:hint="Time"
-        android:inputType="textPersonName"
+        android:inputType="none"
+        android:drawablePadding="8dp"
+        android:drawableLeft="@drawable/ic_baseline_access_time_24"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
+        android:focusable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.638" />
 
     <Button
         android:id="@+id/update"
@@ -86,11 +109,13 @@
         android:layout_height="52dp"
         android:text="UPDATE"
         android:textSize="24sp"
+        android:background="@drawable/wtn_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.658" />
+        app:layout_constraintVertical_bias="0.745" />
 
     <Button
         android:id="@+id/insert"
@@ -98,11 +123,13 @@
         android:layout_height="52dp"
         android:text="INSERT"
         android:textSize="24sp"
+        android:background="@drawable/wtn_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintVertical_bias="0.843" />
 
     <Button
         android:id="@+id/delete"
@@ -110,10 +137,27 @@
         android:layout_height="52dp"
         android:text="DELETE"
         android:textSize="24sp"
+        android:background="@drawable/wtn_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.939" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Change Bus Details"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

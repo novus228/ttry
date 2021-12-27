@@ -2,19 +2,39 @@ package com.example.ttry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class change_bus extends AppCompatActivity {
     EditText id,bn,fr,to,ti;
     Button upd,ins,del;
     SQLiteDatabase db;
-
+    String time;
+    private void tshow()
+    {
+        Calendar c = Calendar.getInstance();
+        int hour = c.get(Calendar.HOUR);
+        int min = c.get(Calendar.MINUTE);
+        TimePickerDialog t =new TimePickerDialog(change_bus.this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int i, int i1) {
+                ti.setText(i+":"+i1);
+                time=i+":"+i1;
+            }
+        }, hour, min,true);
+        t.setTitle("Select Time");
+        t.show();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +49,15 @@ public class change_bus extends AppCompatActivity {
         del = findViewById(R.id.delete);
         db = openOrCreateDatabase("bus_detail",MODE_PRIVATE,null);
         db.execSQL("create table if not exists bus (bid varchar(30) primary key,bname varchar(30),bfrom varchar(30),bto varchar(30),btime varchar(30))");
+        ti.setClickable(true);
+        ti.setLongClickable(false);
+        ti.setInputType(InputType.TYPE_NULL);
+        ti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tshow();
+            }
+        });
 
         ins.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,8 +66,7 @@ public class change_bus extends AppCompatActivity {
                 String n = bn.getText().toString();
                 String f = fr.getText().toString();
                 String t = to.getText().toString();
-                String tim = ti.getText().toString();
-                if(i.equals("")||n.equals("")||f.equals("")||t.equals("")||tim.equals(""))
+                if(i.equals("")||n.equals("")||f.equals("")||t.equals("")||time.equals(""))
                 {
                     Toast.makeText(change_bus.this, "Value not entered.", Toast.LENGTH_SHORT).show();
                 }
@@ -47,7 +75,7 @@ public class change_bus extends AppCompatActivity {
                     Cursor c = db.rawQuery("select * from bus where bid=?",new String[]{i});
                     if(c.getCount()==0)
                     {
-                        db.execSQL("insert into bus values('"+ i +"','"+ n +"','"+ f +"','"+ t +"','"+ tim +"')");
+                        db.execSQL("insert into bus values('"+ i +"','"+ n +"','"+ f +"','"+ t +"','"+ time +"')");
                         Toast.makeText(change_bus.this, "Values entered.", Toast.LENGTH_SHORT).show();
                     }
                     else
@@ -64,8 +92,7 @@ public class change_bus extends AppCompatActivity {
                 String n = bn.getText().toString();
                 String f = fr.getText().toString();
                 String t = to.getText().toString();
-                String tim = ti.getText().toString();
-                if(i.equals("")||n.equals("")||f.equals("")||t.equals("")||tim.equals(""))
+                if(i.equals("")||n.equals("")||f.equals("")||t.equals("")||time.equals(""))
                 {
                     Toast.makeText(change_bus.this, "Value not entered.", Toast.LENGTH_SHORT).show();
                 }
@@ -77,7 +104,7 @@ public class change_bus extends AppCompatActivity {
                     }
                     else
                     {
-                        db.execSQL("update bus set bname='"+ n +"',bfrom='"+ f +"',bto='"+ t +"',btime='"+ tim +"' where bid='"+ i +"'");
+                        db.execSQL("update bus set bname='"+ n +"',bfrom='"+ f +"',bto='"+ t +"',btime='"+ time +"' where bid='"+ i +"'");
                         Toast.makeText(change_bus.this, "Updated", Toast.LENGTH_SHORT).show();
                     }
                 }

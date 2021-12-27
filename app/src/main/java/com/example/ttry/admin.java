@@ -24,19 +24,22 @@ public class admin extends AppCompatActivity {
         us =findViewById(R.id.username);
         pas=findViewById(R.id.password);
         ch = findViewById(R.id.admin);
+
         db = openOrCreateDatabase("admin_detail",MODE_PRIVATE,null);
         db.execSQL("create table if not exists admin (uname varchar(30) primary key,pass varchar(30))");
-        //Cursor c = db.rawQuery("Select * from admin where uname=?",new String[]{us.getText().toString()});
-        //if(c.getCount()==0)
-        {
-            ContentValues c1 = new ContentValues();
-            c1.put("uname", "tanisha@08");
-            c1.put("pass", "tan@123");
-            long res = db.insert("admin", null, c1);
-            //db.execSQL("insert into admin values('tanisha@08','tan@123')");
-            //db.execSQL("insert into admin values('vishalbus','88677567')");
-            //db.execSQL("insert into admin values('reshmabus','bus@4321')");
-        }
+        ContentValues c1 = new ContentValues();
+        c1.put("uname", "tanisha@08");
+        c1.put("pass", "tan@123");
+        long res = db.insert("admin", null, c1);
+        ContentValues c2 = new ContentValues();
+        c2.put("uname", "vishalbus");
+        c2.put("pass", "88677567");
+        long res1 = db.insert("admin", null, c2);
+        ContentValues c3 = new ContentValues();
+        c3.put("uname", "reshmabus");
+        c3.put("pass", "bus@4321");
+        long res2 = db.insert("admin", null, c3);
+
         ch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

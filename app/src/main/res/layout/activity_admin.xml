@@ -4,53 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin">
+    tools:context=".admin"
+    android:background="@drawable/bp">
 
 
     <EditText
         android:id="@+id/username"
         android:layout_width="318dp"
         android:layout_height="51dp"
+        android:drawableLeft="@drawable/ic_baseline_supervisor_account_24"
         android:ems="10"
         android:hint="User Name"
+        android:drawablePadding="15dp"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.319" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="318dp"
         android:layout_height="51dp"
         android:layout_marginTop="41dp"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:ems="10"
+        android:drawablePadding="15dp"
         android:hint="Password"
         android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintVertical_bias="0.084" />
 
     <Button
         android:id="@+id/admin"
         android:layout_width="297dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="252dp"
+        android:background="@drawable/wtn_bg"
         android:text="LOGIN"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.503" />
+        app:layout_constraintVertical_bias="0.362" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin Login"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+  android:background="@drawable/img1"
+    android:backgroundTint="#80FFFFFF"
+    android:backgroundTintMode="src_over">
+
 
     <Button
         android:id="@+id/admin"
         android:layout_width="297dp"
         android:layout_height="52dp"
+        android:background="@drawable/btn_bg"
         android:text="Admin"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +28,9 @@
         android:id="@+id/check"
         android:layout_width="297dp"
         android:layout_height="52dp"
+        android:background="@drawable/btn_bg"
         android:text="CHECK BUS TIMING"
+        android:textColor="#FAF6F6"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
